@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jev-box-tracking"
+version = "0.1.0"
+description = "Realtime object tracking with TypeSafe Jev Box questions, optical flow, and a Kalman filter."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Ben Caunt" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "requests",
+]
+
+[project.optional-dependencies]
+dotenv = ["python-dotenv"]
+
+[project.scripts]
+jev-box-track = "jev_box_tracking.cli:main"
+
+[project.urls]
+Repository = "https://github.com/BenCaunt/jev-box-tracking"
